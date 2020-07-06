@@ -8,7 +8,8 @@ import folium
 # full_contact_api_key = "YOURKEY"
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-d","--database", required=True,help="Path to the SQLite database to analyze.")
+ap.add_argument("-d","--database", required=True,help="Path to the SQLite database")
+ap.add_argument("-info","--info", required=False,help="IP geolocater")
 args = vars(ap.parse_args())
 
 # To store the emails
@@ -23,7 +24,7 @@ Note: You can use any SQLite database as long as it contains IP address.
 
 '''
 # connect to the database
-db     = sqlite3.connect(args['database'])
+db = sqlite3.connect(args['database'])
 cursor = db.cursor()
 cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
 
