@@ -1,14 +1,11 @@
 import argparse
 import re
 import sqlite3
-import requests
-import time
-import csv
 import geoip2.database
 import folium
 
 
-full_contact_api_key = "YOURKEY"
+# full_contact_api_key = "YOURKEY"
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-d","--database", required=True,help="Path to the SQLite database to analyze.")
